@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Exam Seat Allocation System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Exam Seat Allocation System</h1>
+</header>
+
+<div class="home-buttons">
+<button onclick="showAdmin()">Admin</button>
+<button onclick="showStudent()">Student</button>
+</div>
+
+<!-- ADMIN PAGE -->
+
+<div id="adminPage" class="page">
+
+<h2>Admin Panel</h2>
+
+<label>Classroom Number</label>
+<input type="text" id="classroom">
+
+<label>Number of Benches</label>
+<input type="number" id="benches">
+
+<label>Seat Allocation Side</label>
+<select id="side">
+<option value="left">Left</option>
+<option value="right">Right</option>
+<option value="both">Both</option>
+</select>
+
+<label>Input Method</label>
+<select id="inputMethod">
+<option value="manual">Manual</option>
+<option value="excel">Excel</option>
+</select>
+
+<textarea id="manualInput" placeholder="Enter Register Numbers separated by comma"></textarea>
+
+<input type="file" id="excelFile">
+
+<button onclick="allocateSeats()">Allocate Seat</button>
+
+</div>
+
+
+<!-- STUDENT PAGE -->
+
+<div id="studentPage" class="page">
+
+<h2>Find Your Seat</h2>
+
+<input type="text" id="searchReg" placeholder="Enter Register Number">
+
+<button onclick="findSeat()">Find Seat</button>
+
+</div>
+
+
+<h2 id="className"></h2>
+
+<div id="classroomLayout"></div>
+
+<button onclick="goHome()">Home</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
